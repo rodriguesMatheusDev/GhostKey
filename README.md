@@ -1,5 +1,5 @@
 👻 GhostKey - Gerenciador de Senhas Offline
-O GhostKey é um gerenciador de senhas local desenvolvido com Node.js. Ele utiliza criptografia autenticada de nível militar para garantir que seus dados permaneçam privados e íntegros, rodando inteiramente na sua máquina.
+O GhostKey é um gerenciador de senhas local desenvolvido com Node.js. Ele utiliza criptografia autenticada para garantir que seus dados permaneçam privados e íntegros, rodando inteiramente na sua máquina.
 
 ### 🛠️ Tecnologias e Ferramentas
 Ambiente: Node.js
