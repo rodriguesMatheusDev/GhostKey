@@ -1,7 +1,7 @@
 👻 GhostKey - Gerenciador de Senhas Offline
 O GhostKey é um gerenciador de senhas local desenvolvido com Node.js. Ele utiliza criptografia autenticada de nível militar para garantir que seus dados permaneçam privados e íntegros, rodando inteiramente na sua máquina.
 
-🛠️ Tecnologias e Ferramentas
+### 🛠️ Tecnologias e Ferramentas
 Ambiente: Node.js
 
 Framework Web: Express (Roteamento e API)
@@ -29,19 +29,19 @@ Aleatoriedade: Cada registro possui um IV (Vetor de Inicialização) exclusivo d
 
 🚀 Como Configurar e Rodar
 
-1. Clonar e Instalar
-No seu terminal, execute
+### 1. Clonar e Instalar
+No seu terminal, execute:
 
 git clone https://github.com/rodriguesMatheusDev/GhostKey.git
 cd GhostKey
 npm install
 
-2. Alterar SECR3Tkey
+### 2. Alterar SECR3Tkey
 Va até o .env e altere a SECR3Tkey pra uma de sua preferencia
 
 SECR3T_KEY=sua_key
 
-3. Executar o Servidor
+### 3. Executar o Servidor
 npm start
 
 O servidor iniciará em: http://localhost:3000
