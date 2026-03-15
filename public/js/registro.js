@@ -14,7 +14,6 @@ async function cadastrarUsuario() {
 
     
     if (!email || !passwordc) {
-        alert("Preencha todos os campos!");
         return;
     }
 
@@ -31,7 +30,6 @@ async function cadastrarUsuario() {
         const data = await res.json();
 
         if (res.ok) {
-            alert("Conta criada com sucesso!");
             
             window.location.href = "/login";
         } else {
