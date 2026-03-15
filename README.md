@@ -33,7 +33,9 @@ Aleatoriedade: Cada registro possui um IV (Vetor de Inicialização) exclusivo d
 No seu terminal, execute:
 
 git clone https://github.com/rodriguesMatheusDev/GhostKey.git
+
 cd GhostKey
+
 npm install
 
 ### 2. Alterar SECR3Tkey
