@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>GhostKey</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header-container">
+            <h2>SENHAS</h2>
+            <button id="btn-logout" onclick="logout()">SAIR</button>
+        </div>
+
+        <div class="form-wrapper">
+            <div class="form-group">
+                <label for="servico">Serviço</label>
+                <input type="text" id="servico" placeholder="Netflix, GitHub...">
+            </div>
+
+            <div class="form-group">
+                <label for="pass">Senha</label>
+                <input type="password" id="pass" placeholder="••••••••">
+            </div>
+
+            <button id="btn-save" onclick="salvarSenha()">Encrypt</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="list-container">
+            <h3>REGISTROS ENCRIPTADOS</h3>
+            <div id="lista-senhas">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/mainpage.js"></script>
+</body>
+
+</html>

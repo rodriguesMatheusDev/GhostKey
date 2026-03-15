@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Cadastrar </h2>
+
+        <form>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="email@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button onclick="cadastrarUsuario()" type="submit" id="btn-save">Cadastrar</button>
+        </form>
+
+        <div class="divider"></div>
+
+        <div class="list-container">
+            <h3>Opções de Acesso</h3>
+
+            <div class="senha-card" style="animation-delay: 1s;">
+                <div class="info">
+                    <strong>Ja tem uma conta?</strong>
+                    <span>Faça login na sua conta agora</span>
+                </div>
+
+                
+                <a href="/login">
+
+                <button class="pass-delete">Login</button>
+
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/registro.js"></script>
+</body>
+</html>
