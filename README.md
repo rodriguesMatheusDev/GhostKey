@@ -1,21 +1,59 @@
-🔐 GhostKey
+👻 GhostKey - Gerenciador de Senhas Offline
+O GhostKey é um gerenciador de senhas local desenvolvido com Node.js. Ele utiliza criptografia autenticada de nível militar para garantir que seus dados permaneçam privados e íntegros, rodando inteiramente na sua máquina.
 
-Um gerenciador de senhas local desenvolvido com **Node.js** e **AES-256-GCM**, focado em demonstrar conceitos de criptografia simétrica reversível.
+🛠️ Tecnologias e Ferramentas
+Ambiente: Node.js
 
-## 🚀 Como Funciona
-O projeto utiliza uma arquitetura onde o Banco de Dados é "cego". 
-1. **Entrada:** A senha limpa é enviada ao servidor.
-2. **Criptografia:** O servidor utiliza uma **SECR3Tkey** (armazenada em `.env`) e o algoritmo **AES-256-GCM** para gerar um Hash único.
-3. **Armazenamento:** Apenas o Hash e o IV (Vetor de Inicialização) são salvos no arquivo `db.json`.
-4. **Saída:** A senha só é descriptografada sob demanda, enviando o hash de volta ao servidor que possui a chave mestre.
+Framework Web: Express (Roteamento e API)
 
-## 🛡️ Segurança
-- **AES-256-GCM:** Garante não apenas a confidencialidade, mas também a integridade do dado (impede alterações manuais no banco).
-- **Isolamento de Chave:** A Master Key nunca sai do servidor e nunca é enviada ao Front-end.
-- **IV Único:** Mesmo senhas iguais geram hashes diferentes no banco de dados.
+Segurança: Módulo nativo crypto do Node.js
 
-## 🛠️ Tecnologias
-- Node.js
-- Express
-- Crypto API (Nativo do Node)
-- LocalStorage/JSON para persistência
+Criptografia: AES-256-GCM (Authenticated Encryption)
+
+Derivação de Chave: scrypt (para fortalecer a SECR3T_KEY)
+
+Persistência: JSON Local (db.json)
+
+Variáveis de Ambiente: dotenv
+
+Segurança de Origem: Middleware CORS
+
+🔒 Arquitetura de Segurança
+O projeto implementa o algoritmo AES-256-GCM, oferecendo três camadas de proteção:
+
+Confidencialidade: Os dados são cifrados com uma chave de 256 bits gerada via scryptSync.
+
+Integridade: O uso de Auth Tags garante que, se alguém alterar um único byte no seu db.json, o sistema detectará a manipulação e impedirá a descriptografia.
+
+Aleatoriedade: Cada registro possui um IV (Vetor de Inicialização) exclusivo de 12 bytes, garantindo que a mesma senha nunca gere o mesmo hash visual duas vezes.
+
+🚀 Como Configurar e Rodar
+
+1. Clonar e Instalar
+No seu terminal, execute
+
+git clone https://github.com/rodriguesMatheusDev/GhostKey.git
+cd GhostKey
+npm install
+
+2. Alterar SECR3Tkey
+Va até o .env e altere a SECR3Tkey pra uma de sua preferencia
+
+SECR3T_KEY=sua_key
+
+3. Executar o Servidor
+npm start
+
+O servidor iniciará em: http://localhost:3000
+
+📂 Fluxo do Aplicativo
+
+Cadastro: O usuário cria uma conta. A senha de acesso é criptografada antes de ser salva.
+
+Login: O sistema valida a identidade descriptografando o hash armazenado e comparando com a entrada.
+
+Gerenciamento: Após o login, o usuário pode salvar senhas de diferentes serviços, que são armazenadas de forma segura vinculadas ao seu userId.
+
+Recuperação: As senhas salvas só podem ser visualizadas através da rota de descriptografia, que exige a chave correta do servidor.
+
+Este projeto foi desenvolvido para fins de estudo sobre segurança em Node.js.
